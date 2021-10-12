@@ -1,0 +1,100 @@
+$white: white;
+.navbar{
+    height: 100px;
+    margin: 0;
+    width: 100%;
+    .Navbar-logo{
+        margin-right: 30px;
+        h1{
+        @media screen and (min-width:360px) and (max-width:480px){
+            font-size: 36px;
+        }
+       
+        }
+    }
+    .Navbar-searchbar
+    {
+        display: flex;
+        flex: 1;
+            .Navbar-Input
+            {
+                width: 100%;
+                padding: 5px 60px 5px 10px;
+                outline: none;
+                height: 48px;
+                // border-radius: 5px;
+                border-bottom-left-radius: 5px;
+                border-top-left-radius: 5px;
+                color: #aaaaaa;
+                font-size: 14px;
+                font-weight: 700;
+                background: rgba(228, 227, 227, 0.7);
+                border: 2px solid rgba(228, 227, 227, 0.7);
+                border-right: none;
+                    &::placeholder
+                    {
+                        color: #aaaaaa;
+                    }   
+            }
+            .Navbar-button
+            {
+                position: relative;
+                background: rgba(228, 227, 227, 0.7);;
+                outline: none;
+                border: 2px solid rgba(228, 227, 227, 0.7);
+                border-left: none;
+                font-size: 14px;
+                right:0;
+                border-bottom-right-radius: 17px;
+                border-top-right-radius: 17px;
+                &.transparent{
+                    background: transparent;
+                }
+        }
+    }
+    .Navbar-nav
+    {
+        display: flex;
+        justify-content: space-around;
+        width: 300px;
+        margin-right: 50px;
+        text-align: center;
+        margin-left:30px ;
+            .nav-box1
+            {
+                margin-left: 5px;
+                margin-right: 5px;
+                padding: 0px 8px;
+                cursor: pointer;
+                    &:hover .nav-logo
+                    {
+                        color: orange;
+                        transition: 0.6s all ease-in-out;
+                    }
+                    @media screen and (min-width:360px) and (max-width:480px){
+                       display: none; 
+                            &:nth-child(6){
+                                display: block;
+                            }
+                    }
+                   
+            }
+            @media screen and (min-width:768px) and (max-width:1025px){
+                align-items: center;
+                display: flex;
+                place-content: flex-end;
+                margin-top: 5px;
+                margin-left: 39px;
+                margin-right: 0px;
+            }
+            .right-nav{
+                @media screen and (min-width:768px) and (max-width:1025px){
+                    display: none;
+                }
+                  @media screen and (min-width:1025px) and (max-width:1600px){
+                               display: none;
+                           }
+            }
+        }
+}
+

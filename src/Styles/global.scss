@@ -1,0 +1,20 @@
+$black: black;
+$white: white;
+$red : rgb(240, 76, 76);
+
+.neon{
+    background: -webkit-linear-gradient(101.19289390428344deg, rgba(73, 146, 242,1) 8.604166666666666%,rgba(73, 146, 242,1) 38.28125%,rgba(0, 237, 225,1) 71.25578703703705%,rgba(0, 237, 225,1) 80.5486111111111%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+.logo-neon{
+color: aqua;
+  }
+.logo-red{
+color: rgb(248, 91, 91);
+}
+.red{
+  background: -webkit-linear-gradient(114.67196031231879deg, rgba(249, 63, 72,1) 5.736111111111111%,rgba(250, 183, 121,1) 96.29166666666666%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

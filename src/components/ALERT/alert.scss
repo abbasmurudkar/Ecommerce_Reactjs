@@ -1,0 +1,28 @@
+$black: black;
+$white: white;
+$red : rgb(240, 76, 76);
+.alert
+{
+    display: block;
+    margin: 0;
+    padding:0;
+    border: none;
+    border-radius: 0;
+    background-color: $black;
+        .alertion-text
+        {
+            .text-orange
+            {
+                p{
+                    @media screen and (min-width:320px) and (max-width:480px) 
+                    {
+                        font-size: 12px;
+                        margin:0;
+                        padding: 0;
+                        margin-bottom: 6px;
+                    }
+                }
+            }
+        }
+}
+
