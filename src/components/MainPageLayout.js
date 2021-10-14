@@ -1,41 +1,61 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useReducer } from 'react'
 import Alert from './ALERT/Alert'
 import Nav from './NAVBAR/Nav'
 import '../Styles/global.scss'
 import '../components/ALERT/alert.scss'
+import MenuBar from './MENUBAR/MenuBar'
 const MainPageLayout = () => {
-////////ALERT TIMEOUT /////////
-    const [showtime, setshowtime] = useState(true)
-    useEffect(() => {
-      const showtime = setTimeout(() => {
-        setshowtime(false)
-      }, 7000);
-      return () => {
-        clearTimeout(showtime)
+  ////////ALERT TIMEOUT /////////
+  useEffect(() => {
+    const showtime = setTimeout(() => {
+      dispatch({ type: "FETCH_SUCCESS", mode: "light" })
+    }, 7000);
+    return () => {
+      clearTimeout(showtime)
+    }
+  }, [])
+  ///////STATES ARE UPDATING OVER HERE///////
+  const reducer = (prevstate, action) => {
+    switch (action.type) {
+      case 'FETCH_SUCCESS': {
+        return { ...prevstate, show: false, mode: action.mode }
       }
-    },[])
-///////MODES/////////
-const [mode,setmode] = useState('light')
-const modeschanger = ()=>{
-  if(mode === "light")
-  {
-    setmode("dark")
-    document.body.style.background="linear-gradient(114.67196031231879deg, rgba(1, 96, 186,1) 5.736111111111111%,rgba(0, 0, 0,1) 96.29166666666666%)";
-    console.log(mode)
+      case 'Failed': {
+        return { ...prevstate, show: false, mode: action.mode }
+      }
+      default: return prevstate
+    }
   }
-  else
-  {
-    setmode("light")
-    document.body.style.background="white";
+  ///////INITIAL STATE /////////
+  const initialState = {
+    show: true,
+    mode: 'light'
   }
-}
-    return (
-        <div className="Mainpage-layout">
-            {showtime !== false && <Alert mode={mode} message={"Extra 20% Off on Orders Above Rs.10,000. Use Code"} message1={"Mega Dashami Deals | Up to 40% Off"}/>}
-            <Nav placeholder={"Search"} modechanger={modeschanger} mode={mode}/>
-        </div>
-    )
-}
+  const [{mode,show}, dispatch] = useReducer(reducer, initialState)
+  console.log(show,mode)
 
+  ////// MODESCHANGER//////
+  const modeschanger = () => {
+    if (mode === "light") {
+      dispatch({ type: 'FETCH_SUCCESS', mode: 'dark' })
+      document.body.style.background = "linear-gradient(450deg, rgb(12, 12, 12) 0%, rgb(34 77 112) 74%)"
+    }
+    else {
+      dispatch({ type: 'Failed', mode: 'light' })
+      document.body.style.background = "white";
+    }
+  }
+
+
+
+  return (
+    <>
+      {show !== false &&
+        <Alert mode={mode} message={"Extra 20% Off on Orders Above Rs.10,000. Use Code"} message1={"Mega Dashami Deals | Up to 40% Off"} />}
+      <Nav placeholder={"Search"} modechanger={modeschanger} mode={mode} />
+      <MenuBar mode={mode} />
+    </>
+  )
+}
 export default MainPageLayout

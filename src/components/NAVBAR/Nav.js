@@ -40,14 +40,17 @@ function Nav(props) {
         //****NAVBAR STARTS *****/ //
         <div className={` navbar navbar-${props.mode} bg-${props.mode} `}>
             <div className="container">
-
-                {/* //****NAVBAR TITLE *****/}
+                {/* ---------------------- */}
+                {/*      NAVBAR TITLE      */}
+                {/* ---------------------- */}
 
                 <div className=" Navbar-logo">
                     <h1 className={props.mode === "light" ? "red" : "neon"}>SELLFURNITURE</h1>
                 </div>
 
-                {/* //****NAVBAR SEARCHBAR *****/}
+                {/* -------------------------- */}
+                {/*       NAVBAR SEARCHBAR     */}
+                {/* ---------------------- ----*/}
 
                 <div className="Navbar-searchbar">
                     <input type="text" className={`text-${props.mode === 'light' ? 'secondary' : 'info'} bg-${props.mode === 'light' ? '' : 'dark'} Navbar-Input`} onChange={Inputvariable} placeholder={props.placeholder} value={text}></input>
@@ -55,8 +58,9 @@ function Nav(props) {
                         <SearchIcon style={{ fontSize: "26px" }} />
                     </button>
                 </div>
-
-                {/* //****NAVBAR NAVIGATION *****/}
+                {/* -------------------------- */}
+                {/*     NAVBAR NAVIGATION      */}
+                {/* -------------------------- */}
 
                 <div className="Navbar-nav">
                     {logo.map((item, index) => {
@@ -64,17 +68,18 @@ function Nav(props) {
                             <div key={index} className="nav-box1">
                                 <span className={`nav-logo ${props.mode === "light" ? "logo-red" : "logo-neon"}`} >{item.logo}</span>
                                 <span className={`nav-text ${props.mode === "light" ? "red" : "neon"}`}>{item.para}</span>
-                            </div>
-                        )
-                    })}
+                            </div>)})}
                     <div className={`nav-box1`} onClick={props.modechanger}>
-                        <span className={`nav-logo ${props.mode === "light" ? "logo-red" : "logo-neon"}`} >
+                        <span className={`nav-logo ${props.mode=== "light" ? "logo-red" : "logo-neon"}`} >
                             {props.mode === "light" ? <OpacityIcon /> : <InvertColorsOffIcon />}
                         </span>
                         <span className={`nav-text ${props.mode === "light" ? "red" : "neon"}`}>modes</span>
                     </div>
-                                    
-                    {/* //****NAVBAR HAMBURGER *****/}
+
+                    {/* -------------------------- */}            
+                    {/*     NAVBAR HAMBURGER       */}
+                    {/* -------------------------- */}
+
                     <div className="right-nav">
                         <div className="hamburger">
                             <Hamburger onClick={() => setopenhamburger(!openhamburger)}>
@@ -112,7 +117,7 @@ div{
 
     &:nth-child(1)
     {
-        transform: ${(openhamburger) => openhamburger?"rotate(0deg)":"rotate(45deg)"};
+        transform: ${({openhamburger}) => openhamburger?"rotate(45deg)":"rotate(0deg)"};
     }
     &:nth-child(2)
     {
@@ -122,6 +127,5 @@ div{
     {
         transform: ${({openhamburger}) => openhamburger ? "rotate(-45deg)" : "rotate(0)"};
     }
-
 }
 `;
