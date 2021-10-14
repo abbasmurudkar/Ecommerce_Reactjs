@@ -183,6 +183,21 @@ margin: 0 30px;
         h5{
             padding: 6px 1px;
             margin: 0;
+            cursor: pointer;
+            position: relative;
+            &::before{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height:.3rem;
+                    background-color: red;
+                    left: 0;
+                    bottom: 0;
+                    transform: scale(0.1);
+                    transition: 0.4s all ease-in-out;
+                    } &:hover::before{
+                         transform: scale(0.9);
+                        }
         }
     }
 
@@ -225,9 +240,9 @@ transition: 0.4s all ease-in-out;
                     margin-bottom:.5px;
                     font-weight: 500;
                     font-size: 15px;
+                  
                     &:hover{
                         color:white;
-                        cursor: pointer;
                         background: -webkit-linear-gradient(114.67196031231879deg, rgba(249, 63, 72,1) 5.736111111111111%,rgba(250, 183, 121,1) 96.29166666666666%);
                         border-radius: 0 66px 66px 0;
                     }
