@@ -47,12 +47,9 @@ const MainPageLayout = () => {
     }
   }
 
-
-
   return (
     <>
-      {show !== false &&
-        <Alert mode={mode} message={"Extra 20% Off on Orders Above Rs.10,000. Use Code"} message1={"Mega Dashami Deals | Up to 40% Off"} />}
+      {show !== false && <Alert mode={mode} message={"Extra 20% Off on Orders Above Rs.10,000. Use Code"} message1={"Mega Dashami Deals | Up to 40% Off"} />}
       <Nav placeholder={"Search"} modechanger={modeschanger} mode={mode} />
       <MenuBar mode={mode} />
     </>
