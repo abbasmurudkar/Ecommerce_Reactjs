@@ -9,7 +9,7 @@ const MainPageLayout = () => {
   ////////ALERT TIMEOUT /////////
   useEffect(() => {
     const showtime = setTimeout(() => {
-      dispatch({ type: "FETCH_SUCCESS", mode: "light" })
+      dispatch({ type: "Success", mode: "light" })
     }, 7000);
     return () => {
       clearTimeout(showtime)
@@ -18,7 +18,7 @@ const MainPageLayout = () => {
   ///////STATES ARE UPDATING OVER HERE///////
   const reducer = (prevstate, action) => {
     switch (action.type) {
-      case 'FETCH_SUCCESS': {
+      case 'Success': {
         return { ...prevstate, show: false, mode: action.mode }
       }
       case 'Failed': {
@@ -38,7 +38,7 @@ const MainPageLayout = () => {
   ////// MODESCHANGER//////
   const modeschanger = () => {
     if (mode === "light") {
-      dispatch({ type: 'FETCH_SUCCESS', mode: 'dark' })
+      dispatch({ type: 'Success', mode: 'dark' })
       document.body.style.background = "linear-gradient(450deg, rgb(12, 12, 12) 0%, rgb(34 77 112) 74%)"
     }
     else {
