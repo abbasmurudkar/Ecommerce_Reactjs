@@ -18,3 +18,15 @@ color: rgb(248, 91, 91);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.hr-red{
+  border: 2px solid red;
+  padding: 0;
+  margin:0;
+  z-index: -1;
+}
+.hr-neon{
+  border: 1px solid aqua;
+  padding: 0;
+  margin:0;
+  z-index: -1;
+}

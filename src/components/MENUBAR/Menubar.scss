@@ -1,0 +1,99 @@
+$red:red;
+$aqua:aqua;
+$white:white;
+.nav-red{
+    padding: 7px 1px;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    font-size: 15px;
+    font-weight: bolder;
+    &::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height:.3rem;
+            background-color: $red;
+            left: 0;
+            bottom: 0;
+            transform: scale(0.1);
+            transition: 0.4s all ease-in-out;
+            } &:hover::before{
+                 transform: scale(0.9);
+                }
+}
+.nav-neon{
+    padding: 7px 1px;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    font-size: 15px;
+    font-weight: bolder;
+    &::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height:.3rem;
+            background-color: $aqua;
+            left: 0;
+            bottom: 0;
+            transform: scale(0.1);
+            transition: 0.4s all ease-in-out;
+            } &:hover::before{
+                 transform: scale(0.9);
+                }
+}
+ul{
+    padding:0px;
+    &.active{
+    li{
+        list-style: none;
+        letter-spacing: 0;
+        padding: 5px 12px;
+        display: block;
+        margin-bottom:.5px;
+        font-weight: 500;
+        font-size: 15px;
+        cursor: pointer;
+        background-size: 200% 100%;
+        background-position:left bottom;
+        transition: 0.4s all ease-in-out;
+        &:hover{
+            color:$white;
+            background: -webkit-linear-gradient(114.67196031231879deg, rgba(249, 63, 72,1) 5.736111111111111%,rgba(250, 183, 121,1) 96.29166666666666%);
+            border-radius: 0 66px 66px 0;
+            transform: translateX(-2%);
+        }
+    }
+}
+}
+
+.neon-ul{
+    padding:0px;
+    li{
+        list-style: none;
+        letter-spacing: 0;
+        padding: 5px 12px;
+        display: block;
+        margin-bottom:.5px;
+        font-weight: 500;
+        font-size: 15px;
+        cursor: pointer;
+        background-size: 200% 100%;
+        background-position:left bottom;
+        transition: 0.4s all ease-in-out;
+
+        &:hover{
+            color:$white;
+            background:  -webkit-linear-gradient(101.19289390428344deg, rgba(73, 146, 242,1) 8.604166666666666%,rgba(73, 146, 242,1) 38.28125%,rgba(0, 237, 225,1) 71.25578703703705%,rgba(0, 237, 225,1) 80.5486111111111%);
+            border-radius: 0 66px 66px 0;
+            transform: translateX(-2%);
+        }
+    }
+}
+.shadow-light{
+    box-shadow:2px 2px 10px red;
+}
+.shadow-neon{
+    box-shadow: 2px 2px 10px aqua;
+}

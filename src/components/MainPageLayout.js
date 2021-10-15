@@ -10,7 +10,7 @@ const MainPageLayout = () => {
   useEffect(() => {
     const showtime = setTimeout(() => {
       dispatch({ type: "Success", mode: "light" })
-    }, 7000);
+    }, 3000);
     return () => {
       clearTimeout(showtime)
     }
