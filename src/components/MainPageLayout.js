@@ -6,7 +6,9 @@ import '../Styles/global.scss'
 import '../components/ALERT/alert.scss'
 import MenuBar from './MENUBAR/MenuBar'
 const MainPageLayout = () => {
-  ////////ALERT TIMEOUT /////////
+  // -----------------//
+  //  ALERT TIMEOUT  //
+  // ----------------//
   useEffect(() => {
     const showtime = setTimeout(() => {
       dispatch({ type: "Success", mode: "light" })
@@ -15,7 +17,9 @@ const MainPageLayout = () => {
       clearTimeout(showtime)
     }
   }, [])
-  ///////STATES ARE UPDATING OVER HERE///////
+  // ----------------//
+  // STATE UPDATING //
+  //---------------//
   const reducer = (prevstate, action) => {
     switch (action.type) {
       case 'Success': {
@@ -27,7 +31,9 @@ const MainPageLayout = () => {
       default: return prevstate
     }
   }
-  ///////INITIAL STATE /////////
+  // -----------------//
+  //  INITIAL STATE  //
+  //----------------//
   const initialState = {
     show: true,
     mode: 'light'
@@ -35,7 +41,9 @@ const MainPageLayout = () => {
   const [{mode,show}, dispatch] = useReducer(reducer, initialState)
   console.log(show,mode)
 
-  ////// MODESCHANGER//////
+  //-----------------//
+  // CHANGING MODES //
+  //---------------//
   const modeschanger = () => {
     if (mode === "light") {
       dispatch({ type: 'Success', mode: 'dark' })
@@ -49,8 +57,14 @@ const MainPageLayout = () => {
 
   return (
     <>
+    {/* ALERT */}
+
       {show !== false && <Alert mode={mode} message={"Extra 20% Off on Orders Above Rs.10,000. Use Code"} message1={"Mega Dashami Deals | Up to 40% Off"} />}
+      {/* NAVBAR */}
+
       <Nav placeholder={"Search"} modechanger={modeschanger} mode={mode} />
+      {/* MENUBAR */}
+
       <MenuBar mode={mode} />
     </>
   )

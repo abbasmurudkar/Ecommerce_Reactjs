@@ -24,6 +24,9 @@ const Rightnav = ({open,mode,modechanger}) => {
         },
     ]
     return (
+            // ----------------//
+            // RIGHT NAV LIST //
+            //---------------//
         <Nav className="right-nav" open={open}>
             {
                 logo.map((item,index) => {
@@ -60,11 +63,8 @@ transition: transform 0.3s ease-in-out;
     justify-content: space-around;
     align-items: center;
 }
-        span{
-            color:white;
-            font-size: 20px;
-            }
-@media screen and (min-width:340px) and (max-width:480px){
-
+span{
+    color:white;
+    font-size: 20px;
 }
 `;

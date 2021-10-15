@@ -2,7 +2,7 @@ $red:red;
 $aqua:aqua;
 $white:white;
 .nav-red{
-    padding: 7px 1px;
+    padding: 8px 1px;
     margin: 0;
     cursor: pointer;
     position: relative;
@@ -16,7 +16,7 @@ $white:white;
             background-color: $red;
             left: 0;
             bottom: 0;
-            transform: scale(0.1);
+            transform: scale(0);
             transition: 0.4s all ease-in-out;
             } &:hover::before{
                  transform: scale(0.9);
@@ -37,7 +37,7 @@ $white:white;
             background-color: $aqua;
             left: 0;
             bottom: 0;
-            transform: scale(0.1);
+            transform: scale(0);
             transition: 0.4s all ease-in-out;
             } &:hover::before{
                  transform: scale(0.9);

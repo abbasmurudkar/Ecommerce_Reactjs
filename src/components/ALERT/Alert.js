@@ -4,8 +4,9 @@ import '../../Styles/global.scss'
 import styled from 'styled-components';
 const Alert = (props) => {
 
-    return (
+    return (         // -------------- //
                     //ALERT CONTAINER //
+                   // -------------- //
         <div className="alert fade show" role="alert">
             <AlertionMessage className="alertion-text">
                 <div className={`${props.mode === 'light' ? 'red' : 'neon'}`}>

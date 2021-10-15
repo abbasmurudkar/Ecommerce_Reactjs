@@ -26,7 +26,9 @@ const MenuBar = ({ mode }) => {
             list6: "Sectional Sofas",
             list7: "Recliners",
             list8: "Futons",
-            list9: "Sofa spa"
+            list9: "Sofa spa",
+            list10: "Hammocks"
+
         },
         {
             id: "2",
@@ -41,7 +43,6 @@ const MenuBar = ({ mode }) => {
             list8: "Seating Stools",
             list9: "Bean Bags",
             list10: "Swings",
-            list11: "Hammocks"
         },
         {
             id: "3",
@@ -56,9 +57,6 @@ const MenuBar = ({ mode }) => {
             list8: "Cantilever Chairs",
             list9: "Folding Chairs",
             list10: "Plastic Chairs",
-            list11: "Wing Chairs",
-            list12: "Office Chairs",
-            list13: "Patio Chairs"
         },
         {
             id: "4",
@@ -73,8 +71,6 @@ const MenuBar = ({ mode }) => {
             list8: "Bedside Tables",
             list9: "Office Tables",
             list10: "Patio Tables & Sets",
-            list11: "Patio Sets",
-            list12: "Patio Tables",
         },
         {
             id: "5",
@@ -89,7 +85,6 @@ const MenuBar = ({ mode }) => {
             list8: "Wardrobes",
             list9: "Modular Wardrobes",
             list10: "Plastic Cabinets",
-            list11: "Office Cabinets"
         },
         {
             id: "6",
@@ -103,6 +98,8 @@ const MenuBar = ({ mode }) => {
             list7: "Wine Racks",
             list8: "Bar Table Set",
             list9: "Modular Kitchen",
+            list10: "Office Cabinets"
+
         },
         {
             id: "7",
@@ -115,7 +112,9 @@ const MenuBar = ({ mode }) => {
             list6: "Sectional Sofas",
             list7: "Recliners",
             list8: "Futons",
-            list9: "Sofa spa"
+            list9: "Sofa spa",
+            list10: "Patio Tables",
+
         }
     ]
     return (
@@ -146,7 +145,7 @@ const MenuBar = ({ mode }) => {
                                             {LIST_ITEMS.map((item) => {
                                                 return (
                                                     <div className="box1" key={item.id}>
-                                                        <h6 className={`bg-${mode === "light" ? "" : "dark"} text-${mode === "light" ? "" : "light"}`} key={item.id}>{item.head}</h6>
+                                                        <h6 className={`bg-${mode === "light" ? "" : "dark"} text-${mode === "light" ? "" : "light"}`}>{item.head}</h6>
                                                         <div className="menu-item" >
                                                             <ul className={mode === "light" ? "active" : "neon-ul"} style={{ color: mode === "light" ? "black" : "white" }}>
                                                                 <li>{item.list1}</li>
@@ -159,9 +158,6 @@ const MenuBar = ({ mode }) => {
                                                                 <li>{item.list8}</li>
                                                                 <li>{item.list9}</li>
                                                                 <li>{item.list10}</li>
-                                                                <li>{item.list11}</li>
-                                                                <li>{item.list12}</li>
-                                                                <li>{item.list13}</li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -187,13 +183,14 @@ border-right: none;
 border-left: none;
 display:block;
 .slide_container {
-margin: 0 30px;
+margin: 0 10px;
     .menu-head{
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         flex-flow: row nowrap;
          .menu-show{
+             padding: 4px 0px;
              &:hover .list {
              display: flex;
              }
@@ -203,7 +200,7 @@ margin: 0 30px;
 `;
 const MENULIST = styled.div`
 position: fixed;
-top: 135px;
+top: 145px;
 display: flex;
 flex-flow: row;
 display: none;
