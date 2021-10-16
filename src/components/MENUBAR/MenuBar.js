@@ -144,7 +144,7 @@ const MenuBar = ({ mode }) => {
                                             {/* ----------------------- */}
                                             {LIST_ITEMS.map((item) => {
                                                 return (
-                                                    <div className="box1" key={item.id}>
+                                                    <div className="box1" active key={item.id}>
                                                         <h6 className={`bg-${mode === "light" ? "" : "dark"} text-${mode === "light" ? "" : "light"}`}>{item.head}</h6>
                                                         <div className="menu-item" >
                                                             <ul className={mode === "light" ? "active" : "neon-ul"} style={{ color: mode === "light" ? "black" : "white" }}>
@@ -177,10 +177,7 @@ const MenuBar = ({ mode }) => {
 export default MenuBar
 
 const Menu = styled.div`
-border: 2px solid transparent;
 width: 100%;
-border-right: none;
-border-left: none;
 display:block;
 .slide_container {
 margin: 0 10px;
@@ -211,7 +208,7 @@ left: 90px;
     width: 180px;
     display: flex;
     flex-flow: column;
-    box-shadow: 1px 2px 2px gray;
+    box-shadow: 1px 2px 2px ${props=>props.active?"gray":"aqua"};
         h6{
         border-bottom: 2px solid grey;
         display: block;
