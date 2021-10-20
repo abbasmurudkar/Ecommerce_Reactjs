@@ -5,31 +5,35 @@ import { auth, database } from '../misc/Firebase';
 import firebase from 'firebase/app';
 const Signin = () => {
 
-    const onGoogleSignin = () =>{
-       SigninProvider( new firebase.auth.GoogleAuthProvider() )
+    const onGoogleSignin = () => {
+        SigninProvider(new firebase.auth.GoogleAuthProvider())
     }
-    const onFacebookSignin = () =>{
+    const onFacebookSignin = () => {
         SigninProvider(new firebase.auth.FacebookAuthProvider())
 
     }
-    const SigninProvider = async (provider) =>{
+    const onGithubSignin = () =>{
+        SigninProvider(new firebase.auth.GithubAuthProvider())
+    }
+    const SigninProvider = async (provider) => {
         try {
-            const {additionalUserInfo,user} = await auth.signInWithPopup(provider)
-            if(additionalUserInfo.isNewUser)
-            {
+            const { additionalUserInfo, user } = await auth.signInWithPopup(provider)
+            if (additionalUserInfo.isNewUser) {
                 await database.ref(`/profiles/${user.uid}`).set({
-                    name:user.displayName,
+                    name: user.displayName,
                     created: firebase.database.ServerValue.TIMESTAMP
                 })
+                console.log(additionalUserInfo,user)
             }
-            Alert.success("Succesfull login",4000)
+            Alert.success("Succesfull login", 4000)
         } catch (error) {
-            Alert.info(error.message,4000)
+            Alert.info(error.message, 4000)
         }
     }
+    console.log("render")
     return (
         <Container>
-            <Grid style={{marginTop:"150px"}}>
+            <Grid style={{ marginTop: "150px" }}>
                 <Row>
                     <Col xs={24} md={16} mdOffset={5}>
                         <Panel>
@@ -43,6 +47,9 @@ const Signin = () => {
                                 </Button>
                                 <Button block color="green" onClick={onGoogleSignin}>
                                     <Icon icon="google" /> Signin with google
+                                </Button>
+                                <Button block  onClick={onGithubSignin}>
+                                    <Icon icon="github" /> Signin with Github
                                 </Button>
                             </div>
                         </Panel>

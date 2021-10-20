@@ -7,13 +7,12 @@ import Signin from './pages/Signin';
 function App() {
 
   return (
-
     <Switch>
       <PublicRoute path="/sigin">
         <Signin />
       </PublicRoute>
       <PrivateRoute path="/">
-      <MainPageLayout/>
+        <MainPageLayout />
       </PrivateRoute>
     </Switch>
   );
