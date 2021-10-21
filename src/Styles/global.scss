@@ -30,3 +30,9 @@ color: rgb(248, 91, 91);
   margin:0;
   z-index: -1;
 }
+.menu-bg{
+background-color: $white;
+}
+.menu-bg-dark{
+  background: -webkit-linear-gradient(101.19289390428344deg, rgba(73, 146, 242,1) 8.604166666666666%,rgba(73, 146, 242,1) 38.28125%,rgba(0, 237, 225,1) 71.25578703703705%,rgba(0, 237, 225,1) 80.5486111111111%);
+}

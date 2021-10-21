@@ -137,14 +137,14 @@ const MenuBar = ({ mode }) => {
                                     {/* ----------------------- */}
                                     <div className="menu-show">
                                         <h5 key={index} className={mode === "light" ? "nav-red" : "neon nav-neon"}>{items.head}</h5>
-                                        <MENULIST className={`list ${mode === "light" ? "shadow-light" : "shadow-neon"}`}>
+                                        <MENULIST className={`list ${mode === "light" ? "shadow-light menu-bg" : "shadow-neon menu-bg-dark"}`}>
 
                                             {/* ----------------------- */}
                                             {/* -------MENU LIST------- */}
                                             {/* ----------------------- */}
                                             {LIST_ITEMS.map((item) => {
                                                 return (
-                                                    <div className="box1" active key={item.id}>
+                                                    <div className="box1"  key={item.id}>
                                                         <h6 className={`bg-${mode === "light" ? "" : "dark"} text-${mode === "light" ? "" : "light"}`}>{item.head}</h6>
                                                         <div className="menu-item" >
                                                             <ul className={mode === "light" ? "active" : "neon-ul"} style={{ color: mode === "light" ? "black" : "white" }}>
@@ -201,14 +201,15 @@ top: 145px;
 display: flex;
 flex-flow: row;
 display: none;
-z-index: 1;
+z-index: 3;
 transition: 0.4s all ease-in-out;
 left: 90px;
 .box1{
     width: 180px;
     display: flex;
+    z-index: 1;
     flex-flow: column;
-    box-shadow: 1px 2px 2px ${props=>props.active?"gray":"aqua"};
+    box-shadow: 1px 2px 2px grey;
         h6{
         border-bottom: 2px solid grey;
         display: block;
