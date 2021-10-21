@@ -122,8 +122,8 @@ const MenuBar = ({ mode }) => {
             {/* ----------------------- */}
             {/* -------MENUBAR--------- */}
             {/* ----------------------- */}
-            <hr className={mode === "light" ? "hr-red" : "hr-neon"} />
             <Menu className={`bg-${mode === "light" ? "" : "dark"}`}>
+            <hr className={mode === "light" ? "hr-red" : "hr-neon"} />
                 <div className="slide_container">
                     {/* ----------------------- */}
                     {/* ----MENUBAR HEADING---- */}
@@ -169,8 +169,8 @@ const MenuBar = ({ mode }) => {
                             )})}
                     </div>
                 </div>
+                <hr className={mode === "light" ? "hr-red" : "hr-neon"} />
             </Menu>
-            <hr className={mode === "light" ? "hr-red" : "hr-neon"} />
         </>
     )
 }
