@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import {  useEffect, useReducer } from 'react'
-import Alert from '../components/ALERT/Alert'
 import Nav from '../components/NAVBAR/Nav'
 import '../Styles/global.scss'
 import '../components/ALERT/alert.scss'
