@@ -16,21 +16,20 @@
 //         SigninProvider(new firebase.auth.GithubAuthProvider())
 //     }
 //     const SigninProvider = async (provider) => {
-//         try {
-//             const { additionalUserInfo, user } = await auth.signInWithPopup(provider)
-//             if (additionalUserInfo.isNewUser) {
-//                 await database.ref(`/profiles/${user.uid}`).set({
-//                     name: user.displayName,
-//                     created: firebase.database.ServerValue.TIMESTAMP
-//                 })
-//                 console.log(additionalUserInfo,user)
-//             }
-//             Alert.success("Succesfull login", 4000)
-//         } catch (error) {
-//             Alert.info(error.message, 4000)
-//         }
+//   try{
+//     const {additionalUserInfo,user} = await auth.signInWithPopup(provider)
+//     if(additionalUserInfo.isNewUser){
+//         database.ref(`/profiles/${user.uid}`).set({
+//             name: user.displayName,
+//             created : firebase.database.ServerValue.TIMESTAMP
+//         })
 //     }
-//     console.log("render")
+//     console.log(additionalUserInfo,user)
+//     Alert.success("Succesfull login",4000)
+//   }catch(err){
+// Alert.info(err.message,4000)
+//   }
+//     }
 //     return (
 //         <Container>
 //             <Grid style={{ marginTop: "150px" }}>

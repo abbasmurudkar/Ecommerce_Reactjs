@@ -123,7 +123,7 @@ const MenuBar = ({ mode }) => {
             {/* ----------------------- */}
             {/* -------MENUBAR--------- */}
             {/* ----------------------- */}
-            <Menu className={`bg-${mode === "light" ? "" : "dark"} Menu-container`}>
+            <Menu className={`bg-${mode === "light" ? "" : "dark"} Menu-container `}>
             <hr className={mode === "light" ? "hr-red" : "hr-neon"} />
                 <div className="slide_container">
                     {/* ----------------------- */}
@@ -136,7 +136,7 @@ const MenuBar = ({ mode }) => {
                                     {/* ----------------------- */}
                                     {/* -----MENUBAR SHOW------ */}
                                     {/* ----------------------- */}
-                                    <div className="menu-show">
+                                    <div className="menu-show ">
                                         <h5 key={index} className={mode === "light" ? "nav-red" : "neon nav-neon"}>{items.head}</h5>
                                         <MENULIST className={`list ${mode === "light" ? "shadow-light menu-bg" : "shadow-neon menu-bg-dark"}`}>
 
@@ -178,11 +178,11 @@ const MenuBar = ({ mode }) => {
 export default MenuBar
 
 const Menu = styled.div`
-width: 100%;
-display:block;
-//and more - Extra large screens, TV
+/* width: 100%; */
+margin: 0px 2px ;
 .slide_container {
 margin: 0 10px;
+
     .menu-head{
         display: flex;
         justify-content: space-evenly;

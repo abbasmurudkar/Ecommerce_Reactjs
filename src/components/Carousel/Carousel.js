@@ -57,7 +57,7 @@ const Carousel = () => {
         }
     ]
     return (
-        <Container className="mt-3">
+        <Container className="mt-3 ">
             <CarouselBanner>
                 <OwlCarousel {...options} className="container-Carousel">
                     {image.map(({ images, id }) => {
@@ -81,30 +81,31 @@ export default Carousel
 
 const Container = styled.div`
 border: 2px solid red;
+margin: 0;
+padding:0;
 width: 100%;
-height: 600px;
+/* height: 600px; */
 display: flex;
-justify-content: space-around;
+justify-content: space-between;
 align-items: center;
+margin: 0px 10px;
 `;
 const CarouselBanner = styled.div`
-border: 2px solid red;
-.container-Carousel{
+width: 800px;
+margin: 0px 60px;
+.item{
     border: 2px solid green;
-    margin: 0;
-    width: 700px;
-    height: 500px;
-    padding: 0;
-    .item{
-      border: 2px solid violet;
-       width: 700px;
-        img{
-           height: 500px;
-           object-fit: fill;
-        }
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    object-fit: contain;
+    img{
+      width: 100%;
+      padding: 2px;
+      height: 550px;
     }
 }`;
 const ImagesBanner = styled.div`
-border: 2px solid red;
+/* border: 2px solid red; */
 
 `;

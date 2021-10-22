@@ -12,6 +12,9 @@
         display: block; 
         }
 .slide_container{
+    @media screen and (min-width:1201px) and (max-width:5000px){
+        margin: 0px 252px 
+    }
     .menu-head{
        .menu-show{
            h5{

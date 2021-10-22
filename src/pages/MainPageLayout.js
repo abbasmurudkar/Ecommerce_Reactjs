@@ -27,7 +27,7 @@ const [mode, setmode] = useState("light")
       {/* MENUBAR */}
       <MenuBar mode={mode} />
       {/* CAROUSEL */}
-      {/* <Carousel/> */}
+      <Carousel/>
     </>
   )
 }
