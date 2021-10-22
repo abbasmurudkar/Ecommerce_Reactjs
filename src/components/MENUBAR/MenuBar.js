@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import './Menubar.scss'
+import './MenuBarmedia.scss'
 const MenuBar = ({ mode }) => {
     const LISTITEMS_INFO = [
         { head: "Leaving" },
@@ -122,7 +123,7 @@ const MenuBar = ({ mode }) => {
             {/* ----------------------- */}
             {/* -------MENUBAR--------- */}
             {/* ----------------------- */}
-            <Menu className={`bg-${mode === "light" ? "" : "dark"}`}>
+            <Menu className={`bg-${mode === "light" ? "" : "dark"} Menu-container`}>
             <hr className={mode === "light" ? "hr-red" : "hr-neon"} />
                 <div className="slide_container">
                     {/* ----------------------- */}
@@ -179,6 +180,7 @@ export default MenuBar
 const Menu = styled.div`
 width: 100%;
 display:block;
+//and more - Extra large screens, TV
 .slide_container {
 margin: 0 10px;
     .menu-head{
@@ -219,6 +221,7 @@ left: 90px;
         padding: 12px 10px;
         background-color: #fff;
         cursor: pointer;
+       
         } 
     }
 `;

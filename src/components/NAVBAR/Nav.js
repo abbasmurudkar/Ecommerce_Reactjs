@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Nav.scss'
 import '../../Styles/global.scss'
+import './Navmedia.scss'
 import SearchIcon from '@mui/icons-material/Search';
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
